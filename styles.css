@@ -8,6 +8,65 @@
   vertical-align: baseline;
   background: transparent;
 }
+
+nav{
+  background: #3C3C3E;
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  padding: 10px 0;
+  align-items: center;
+  justify-content:space-between;
+  z-index: 10;
+  /*transition: top 0.3s;*/
+}
+
+.logo{
+  height: 11vh;
+  width: auto;
+  padding-left: 5vw;
+}
+
+nav ul{
+  margin-right: 5vw;
+  margin-left: 10vw;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 20px;
+}
+
+nav ul li a{
+    font-size: 130%;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+nav ul li a:hover{
+    color: #9999cc;
+}
+
+.section1{
+  padding-top: 200px;
+}
+
+h1{ 
+  font-size:28px;
+}
+
+/*
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
 body {
   background: #DCDDDF url(https://cssdeck.com/uploads/media/items/7/7AF2Qzt.png);
   color: #000;
@@ -249,4 +308,4 @@ form:after {
 .button a:hover {
   background-position: 0 -135px;
   color: #00aeef;
-}
+}*/
