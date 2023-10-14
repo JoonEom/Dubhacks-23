@@ -7,6 +7,7 @@
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  font-family: Verdana;
 }
 
 nav{
@@ -50,13 +51,42 @@ nav ul li a:hover{
 }
 
 .section1{
-  padding-top: 200px;
+  padding-top: 20vw;
+}
+
+.container1{
+  padding: 20px;
+  margin: auto;
+  width: 20vw;
+  text-align: left;
+  background-color: lightcyan;
+  border-radius: 20px;
 }
 
 h1{ 
   font-size:28px;
+  padding-bottom: 30px;
 }
 
+.input-text{
+  padding: 5px;
+  border: #3C3C3E;
+  border-style:solid;
+  border-radius: 15px;
+}
+
+.submit{
+  padding: 5px;
+  border: #3C3C3E;
+  border-style:solid;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.input-border{
+  border:#3C3C3E;
+  padding-bottom: 10px;
+}
 /*
 *{
   margin: 0;
