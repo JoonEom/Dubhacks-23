@@ -2,7 +2,7 @@ function getFlightNum(event) {
     event.preventDefault();
     let flightNum = document.getElementById("flight-number").value;
     console.log(flightNum);
-
+    window.location.href = 'match.html'
 }
 
 function getLogin(event) {
@@ -11,7 +11,7 @@ function getLogin(event) {
     let password = document.getElementById("login-password").value;
     console.log(username);
     console.log(password);
-    window.location.href = "home.html";
+    window.location.href = 'home.html'
 }
 
 function getSignup(event) {
@@ -24,6 +24,6 @@ function getSignup(event) {
     console.log(lastname);
     console.log(email);
     console.log(password);
-    window.location.href = "login.html";
+    window.location.href = 'login.html'
 
 }

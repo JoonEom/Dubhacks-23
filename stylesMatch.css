@@ -1,3 +1,4 @@
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +11,7 @@
 }
 
 nav {
-    
+
     position: fixed;
     display: flex;
     width: 100vw;
@@ -18,7 +19,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     z-index: 10;
-    
+    /*transition: top 0.3s;*/
 }
 
 .logo {
@@ -27,7 +28,8 @@ nav {
     padding-left: 5vw;
     transition: 0.3s ease;
 }
-.logo:hover{
+
+.logo:hover {
     height: 12vh;
 }
 
@@ -45,15 +47,17 @@ nav ul li {
 nav ul li a {
     font-size: 130%;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: bold;
     transition: 0.3s ease;
-    color: black;
-    letter-spacing: .15em; 
+    color: white;
+    font-weight: 400;
+    letter-spacing: .15em;
 }
 
 nav ul li a:hover {
     color: orange;
     font-size: 150%;
+
 }
 
 .container {
@@ -62,40 +66,62 @@ nav ul li a:hover {
     height: 100vh;
     display: flex;
     justify-content: center;
-    
+    background-repeat: no-repeat;
+
 }
-#content {
-    height: 20vh;
-    margin-top: 150px;
-    border-radius: 10px;
-    padding: 20px;
-}
-.form-container{
+
+.match-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    padding: 0px 24px 96px 24px;
+    gap: 100px 50px;
+    margin-top: 200px;
+    margin-bottom: 60px;
+}
+
+.card {
+    background-color: transparent;
+    display: flex;
     justify-content: center;
-    align-items: center;
-    
-}
-h1{
-    font-size: 30px;
-    margin-bottom: 5px;
-    letter-spacing: .15em; 
+    width: 370px;
+    height: 320px;
+    border-radius: 10%;
+    transition: 0.75s;
+    overflow: hidden;
+    overflow: scroll;
+    color: white;
     font-weight: 400;
+    text-decoration: none;
+
 }
-#flight-number {
-    margin: 10px;
-    padding: 10px;
-    border: 3px solid black;
-    border-radius: 10px;
+
+.card:hover {
+    height: 500px;
+    box-shadow: 2px 2px 10px 2px black;
 }
-.home-submit-button {
-    margin-top: 5px;
-    font-size: 20px;
-    transition: 0.3s ease;
+
+.card-image {
+    background-color: white;
+    margin-top: 20px;
+    position: absolute;
+    width: 300px;
+    height: 220px;
+    border-radius: 10%;
+    box-shadow: 2px 2px 10px 2px black;
+}
+
+.card-info {
+    margin-top: 265px;
+    text-align: center;
     font-weight: 400;
-    letter-spacing: .15em; 
+
 }
-.home-submit-button:hover{
+
+.card-info>p {
+    margin: 20px;
+}
+
+h2 {
     font-size: 30px;
 }
