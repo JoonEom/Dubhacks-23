@@ -32,6 +32,7 @@
           <img width="200" src="img/profile.webp" class="card-image">
             <div class="card-info">
                 <h2 id="name"></h2>
+                <p id="phone"></p>
                 <p id="interest"></p>
             </div>
         </div>                
@@ -46,9 +47,12 @@
     const _firstName = localStorage.getItem('first-name');
     const _lastName = localStorage.getItem('last-name');
     const _interest = localStorage.getItem('interest');
+    const _phone = localStorage.getItem('phone');
 
     document.getElementById('name').innerHTML = _firstName + " " + _lastName;
     document.getElementById('interest').innerHTML = "Interest: " + _interest;
+    document.getElementById('phone').innerHTML = "Phone: " + _phone;
+
 
 
 

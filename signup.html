@@ -40,6 +40,10 @@
             <input type="text" placeholder="Password" required="" id="signup-password" />
         </div>
         <div>
+          <input type="text" placeholder="Phone Number" required="" id="phone" />
+      </div>
+      
+        <div>
           <input type="text" placeholder="Interests" required="" id="interests" />
         </div>
         <div>
@@ -57,6 +61,7 @@
     const email = document.getElementById("email");
     const password = document.getElementById("signup-password");
     const interests = document.getElementById("interests");
+    const phone = document.getElementById("phone");
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -66,6 +71,7 @@
       emailValue = email.value;
       passwordValue = password.value;
       interestValue = interests.value;
+      phoneValue = phone.value;
 
 
       localStorage.setItem('first-name', firstNameValue);
@@ -73,6 +79,7 @@
       localStorage.setItem('email', emailValue);
       localStorage.setItem('password', passwordValue);
       localStorage.setItem('interest', interestValue);
+      localStorage.setItem('phone', phoneValue);
 
       window.location.href = "login.html";
 

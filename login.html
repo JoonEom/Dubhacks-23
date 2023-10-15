@@ -49,11 +49,17 @@
     const form = document.querySelector(".form-container");
     const username = document.getElementById("username");
     const password = document.getElementById("login-password");
-    const _firstName = localStorage.getItem('first-name');
-    const _lastName = localStorage.getItem('last-name');
+    let _firstName = localStorage.getItem('first-name');
+    let _lastName = localStorage.getItem('last-name');
     const _email = localStorage.getItem('email');
     const _password = localStorage.getItem('password');
     
+    if (_firstName == null) 
+    {
+      _firstName = "Unknown";
+      _lastName = "User";
+    }
+
     document.querySelector(".text").innerHTML = "Hello, " + _firstName + " " + _lastName;
 
     form.addEventListener('submit', function(e) {

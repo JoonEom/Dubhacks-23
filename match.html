@@ -36,6 +36,7 @@
                     <h2 id="name1"></h2>
                     <p id="i1"></p>
                     <p id="d1"></p>
+                    <p id="p1"></p>
 
     
                 </div>
@@ -46,6 +47,7 @@
                   <h2 id="name2"></h2>
                   <p id="i2"></p>
                   <p id="d2"></p>
+                  <p id="p2"></p>
 
 
                 </div>
@@ -56,6 +58,7 @@
                   <h2 id="name3"></h2>
                   <p id="i3"></p>
                   <p id="d3"></p>
+                  <p id="p3"></p>
 
 
                 </div>
@@ -67,29 +70,42 @@
 
   <script>
 
-  
+    let flightNum = localStorage.getItem("flight-number");
+
     const Http = new XMLHttpRequest();
-    const url='https://us-west1-festive-airway-393617.cloudfunctions.net/func2';
-    Http.open("GET", url);
-    Http.send();
-    Http.overrideMimeType("application/json");  
+    const url = "https://flyngbackend-2ac42a8587ca.herokuapp.com/api/" + flightNum;
+    Http.open("GET", url);
+    Http.send();
+    Http.onreadystatechange = (e) => {
+    let data = JSON.parse(Http.responseText);
+    let gate = data.gate;
+    localStorage.setItem('gate',gate);
+    }
+
+  
+    const Http2 = new XMLHttpRequest();
+    const url2='https://us-west1-festive-airway-393617.cloudfunctions.net/func2';
+    Http2.open("GET", url2);
+    Http2.send();
+    Http2.overrideMimeType("application/json");  
 
 
-    Http.onreadystatechange = (e) => {
+    Http2.onreadystatechange = (e) => {
         //set values
-        let data = JSON.parse(Http.responseText);
-        let n1 = parseInt(Math.random()*10);
-        let n2 = parseInt(Math.random()*10);
+        let size = 15;
+        let data = JSON.parse(Http2.responseText);
+        let n1 = parseInt(Math.random()*size);
+        let n2 = parseInt(Math.random()*size);
         while(n2==n1){
-          n2 = parseInt(Math.random()*10);
+          n2 = parseInt(Math.random()*size);
         }
-        let n3 = parseInt(Math.random()*10);
+        let n3 = parseInt(Math.random()*size);
         while(n3==n1 || n3 == n2){
-          n3 = parseInt(Math.random()*10);
+          n3 = parseInt(Math.random()*size);
         }
         
+        console.log(Http2);
 
-        console.log(n1);
         document.getElementById('name1').innerHTML = data[n1]['name'];
         document.getElementById('name2').innerHTML = data[n2]['name'];
         document.getElementById('name3').innerHTML = data[n3]['name'];
@@ -102,6 +118,9 @@
         document.getElementById('d2').innerHTML = "Destination: " + data[n2]['destination'];
         document.getElementById('d3').innerHTML = "Destination: " + data[n3]['destination'];
 
+        document.getElementById('p1').innerHTML = "Phone: " + data[n1]['phone'];
+        document.getElementById('p2').innerHTML = "Phone: " + data[n2]['phone'];
+        document.getElementById('p3').innerHTML = "Phone: " + data[n3]['phone'];
     }
   
 

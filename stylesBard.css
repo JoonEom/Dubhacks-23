@@ -175,4 +175,6 @@ body{
 
   }
  
-  
+  #bard-response{
+    max-width: 85%;
+  }
