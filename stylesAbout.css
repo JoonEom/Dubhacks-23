@@ -10,7 +10,6 @@
 }
 
 nav {
-    
     position: fixed;
     display: flex;
     width: 100vw;
@@ -45,52 +44,52 @@ nav ul li {
 nav ul li a {
     font-size: 130%;
     text-decoration: none;
+    color: #87CEFA;
     font-weight: bold;
     transition: 0.3s ease;
-    color: #87CEFA;
 }
 
 nav ul li a:hover {
     color: orange;
     font-size: 150%;
 }
-
 .container {
-    background-image: url('img/mountain.jpeg');
+    background-image: url('img/plane.jpeg');
     background-size: cover;
     height: 100vh;
     display: flex;
     justify-content: center;
-    
-}
-#content {
-    height: 20vh;
-    margin-top: 150px;
-    border-radius: 10px;
-    padding: 20px;
-}
-.form-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     
 }
-h1{
-    font-size: 30px;
-    margin-bottom: 5px;
+
+.tagline {
+    margin-bottom: 450px;
+    font-size: 50px;
+    color: white; 
+    overflow: hidden;
+    border-right: 5px solid orange; 
+    white-space: nowrap; 
+    letter-spacing: .15em; 
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; /* Specifies the animation */
 }
-#flight-number {
-    margin: 10px;
-    padding: 10px;
-    border: 5px solid #87CEFA;
-    border-radius: 10px;
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
 }
-.home-submit-button {
-    margin-top: 5px;
-    font-size: 20px;
-    transition: 0.3s ease;
-}
-.home-submit-button:hover{
-    font-size: 30px;
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+
 }
