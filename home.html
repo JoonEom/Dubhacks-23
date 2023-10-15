@@ -29,7 +29,8 @@
 
   <div class="container">
     <section id="content">
-      <form class="form-container" onsubmit="getFlightNum(event)">
+      <form class="form-container" onsubmit="getFlightNum(event); moveToMatchPage(event); return false;">
+        <div id="text"></div>
         <h1>Find Your Flyng</h1>
         <div>
           <input type="text" placeholder="Flight Number" required="" id="flight-number" />
