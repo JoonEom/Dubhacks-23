@@ -122,7 +122,7 @@ nav ul li a{
 
 }
 .hi{
-  font-size: 18px;
+  font-size: 20px;
 }
 }
 
@@ -176,5 +176,9 @@ body{
   }
  
   #bard-response{
+    max-width: 85%;
+  }
+   
+  #bard-response2{
     max-width: 85%;
   }

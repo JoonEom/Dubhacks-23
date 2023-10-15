@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <title>Flyng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link href="stylesBard.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,28 +30,48 @@
   
 <div class="container">
     <div class="tagline-container">
-        <div class="tagline">Recommended Meeting Spots</div>
-        
+        <div class="tagline">Recommended Meeting Spots</div> 
     </div>
     <div class="text-container">
         <div class = "hi" style="margin-bottom: 5px;"> Courtesy of Google Generative AI</div>
-        <div id="bard-response" style="padding: 50px;"></div>
+        <div id="bard-response" style="margin-bottom: 10px; font-size: 15px;"></div>
+        <br>
+        <div class="hi">Things to do at destination</div>
+        <div id="bard-response2" style="margin-bottom: 10px; font-size: 15px;"></div>
     </div>
 </div>
   
 <script>
+
+
   let _gate = localStorage.getItem("gate");
   const gate2 = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "B3", "B4", "B5", "B6", "B7", "B8", "B9", "B10", "B11", "B12", "B13", "B14", "B15", "C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C13", "C14", "C15", "C16", "C17", "C18", "C19", "C20", "D1", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10", "D11", "N1", "N2", "N3", "N4", "N5", "N6", "N7", "N8", "N9", "N10", "N11", "N12", "N13", "N14", "N15", "N16", "S1", "S2", "S3", "S4", "S5", "S6", "S7", "S8", "S9", "S10", "S11", "S12", "S13", "S14", "S15", "S16"]
   let rand = parseInt(Math.random()*gate2.length);
+  
   const Http = new XMLHttpRequest();
   const url = "https://flyngbackend-2ac42a8587ca.herokuapp.com/gates/"+ _gate + "/" + gate2[rand];
   Http.open("GET", url);
   Http.send();
   Http.onreadystatechange = (e) => {
   let bard = JSON.parse(Http.responseText);
-  console.log(bard.text);
+
   document.getElementById("bard-response").innerHTML = bard.text;
+  }
+
+  let _flightNum = localStorage.getItem("flight-number");
+  let _interest = localStorage.getItem("interest");
+  
+  const Http2 = new XMLHttpRequest();
+  const url2 = "https://flyngbackend-2ac42a8587ca.herokuapp.com/activities/"+ _flightNum + "/" + _interest;
+  Http2.open("GET", url2);
+  Http2.send();
+  Http2.onreadystatechange = (e) => {
+  let bard2 = JSON.parse(Http2.responseText);
+
+  console.log(bard2);
+  document.getElementById("bard-response2").innerHTML = bard2.text;
   }
+
 
 </script>
 
