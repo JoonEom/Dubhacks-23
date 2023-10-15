@@ -25,7 +25,7 @@
 
   <div class="container">
     <section id="content">
-      <form class="form-container" onsubmit="getSignup(event)">
+      <form class="form-container">
         <h1>Sign Up</h1>
         <div>
           <input type="text" placeholder="First Name" required="" id="firstname" />
@@ -39,7 +39,9 @@
         <div>
             <input type="text" placeholder="Password" required="" id="signup-password" />
         </div>
-
+        <div>
+          <input type="text" placeholder="Interests" required="" id="interests" />
+        </div>
         <div>
             <input type="submit" class="signup-submit-button">
         </div>
@@ -47,6 +49,36 @@
 
     </section>
   </div>
+
+  <script> 
+    const form = document.querySelector(".form-container");
+    const firstName = document.getElementById("firstname");
+    const lastName = document.getElementById("lastname");
+    const email = document.getElementById("email");
+    const password = document.getElementById("signup-password");
+    const interests = document.getElementById("interests");
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      firstNameValue = firstName.value;
+      lastNameValue = lastName.value;
+      emailValue = email.value;
+      passwordValue = password.value;
+      interestValue = interests.value;
+
+
+      localStorage.setItem('first-name', firstNameValue);
+      localStorage.setItem('last-name', lastNameValue);
+      localStorage.setItem('email', emailValue);
+      localStorage.setItem('password', passwordValue);
+      localStorage.setItem('interest', interestValue);
+
+      window.location.href = "login.html";
+
+    })
+
+  </script>
 
 
 </body>

@@ -29,7 +29,7 @@
 
   <div class="container">
     <section id="content">
-      <form class="form-container" onsubmit="getFlightNum(event); moveToMatchPage(event); return false;">
+      <form class="form-container">
         <div id="text"></div>
         <h1>Find Your Flyng</h1>
         <div>
@@ -43,7 +43,22 @@
 
     </section>
   </div>
-  <script src="script.js"></script>
+  <script>
+    const form = document.querySelector(".form-container");
+    const flightNumber = document.getElementById("flight-number");
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+    
+      flightNumberValue = flightNumber.value;
+
+      localStorage.setItem('flight-number', flightNumberValue);
+
+      window.location.href = "match.html";
+
+    })
+
+  </script>
 </body>
 
 </html>

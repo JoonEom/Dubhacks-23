@@ -122,3 +122,10 @@ h1{
   font-size: 23px;
 }
 
+.text {
+  font-weight: 400;
+  letter-spacing: .15em; 
+  color: white;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
