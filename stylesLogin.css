@@ -45,9 +45,11 @@ nav ul li{
 nav ul li a{
     font-size: 130%;
     text-decoration: none;
-    color: #87CEFA;
+    color: white;
     font-weight: bold;
     transition: 0.3s ease;
+    font-weight: 400;
+    letter-spacing: .15em; 
 }
 
 nav ul li a:hover{
@@ -57,7 +59,7 @@ nav ul li a:hover{
 }
 
 .container {
-  background-image: url('img/boarding.jpeg');
+  background-image: url('img/background.jpeg');
   background-size: cover;
   height: 100vh;
   display: flex;
@@ -81,20 +83,24 @@ nav ul li a:hover{
   
 }
 h1{
-  font-size: 35px;
+  font-size: 30px;
   margin-bottom: 5px;
+  color: white;
+  letter-spacing: .15em; 
+  font-weight: 400;
+
 }
 #username {
   margin: 10px;
   padding: 10px;
-  border: 5px solid #87CEFA;
+  border: 2px solid black;
   border-radius: 10px;
   background-color: white;
 }
 #login-password {
   margin: 10px;
   padding: 10px;
-  border: 5px solid #87CEFA;
+  border: 2px solid black;
   border-radius: 10px;
   background-color: white;
 }
@@ -109,26 +115,10 @@ h1{
   padding-top: 2px;
   padding-bottom: 2px;
   border-radius: 10px;
-  border: 2px solid #87CEFA;
+  border: 2px solid black;
 
 }
 .login-submit-button:hover{
   font-size: 23px;
 }
-.login-signup-button {
-  margin-top: 30px;
-  font-size: 10px;
-  transition: 0.3s ease;
-  color: grey;
-  background-color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  border-radius: 10px;
-  border: 2px solid #87CEFA;
 
-}
-.login-signup-button:hover{
-  font-size: 13px;
-}

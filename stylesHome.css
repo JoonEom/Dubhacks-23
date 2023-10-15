@@ -45,9 +45,10 @@ nav ul li {
 nav ul li a {
     font-size: 130%;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 400;
     transition: 0.3s ease;
-    color: #87CEFA;
+    color: black;
+    letter-spacing: .15em; 
 }
 
 nav ul li a:hover {
@@ -79,17 +80,21 @@ nav ul li a:hover {
 h1{
     font-size: 30px;
     margin-bottom: 5px;
+    letter-spacing: .15em; 
+    font-weight: 400;
 }
 #flight-number {
     margin: 10px;
     padding: 10px;
-    border: 5px solid #87CEFA;
+    border: 3px solid black;
     border-radius: 10px;
 }
 .home-submit-button {
     margin-top: 5px;
     font-size: 20px;
     transition: 0.3s ease;
+    font-weight: 400;
+    letter-spacing: .15em; 
 }
 .home-submit-button:hover{
     font-size: 30px;
