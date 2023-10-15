@@ -6,7 +6,7 @@
   <title>Flyng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="stylesAbout.css" rel="stylesheet">
+  <link href="StylesBard.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,16 +27,32 @@
       <li><a href="profile.html">Profile</a></li>
     </ul>
   </nav>
+
+  
 <div class="container">
     <div class="tagline-container">
-        <div class="tagline">Where friendships take off</div>
-      </div>
-    <div class="get-started-container">
-        <a href="login.html" class="get-started" ><button style="color: white;">Get Started</button></a>
+        <div class="tagline">Recommendation Meeting Spots</div>
+        
+    </div>
+    <div class="text-container">
+        <div style="margin-bottom: 5px;"> Courtesy of Google Generative AI</div>
+        <div id="bard-response" style="padding: 50px;"></div>
     </div>
 </div>
   
-  
+<script>
+  const Http = new XMLHttpRequest();
+  const url = "https://flyngbackend-2ac42a8587ca.herokuapp.com/gates/B2/C3";
+  Http.open("GET", url);
+  Http.send();
+  Http.onreadystatechange = (e) => {
+  console.log('hi');
+  let bard = JSON.parse(Http.responseText);
+  console.log(bard.text);
+  document.getElementById("bard-response").innerHTML = bard.text;
+  }
+
+</script>
 
 </body>
 

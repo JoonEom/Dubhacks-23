@@ -24,36 +24,39 @@
     <ul>
       <li><a href="signup.html">Sign Up</a></li>
       <li><a href="login.html">Login</a></li>
-      <li><a href="#contact">Profile</a></li>
+      <li><a href="profile.html">Profile</a></li>
     </ul>
   </nav>
 
   <div class="container">
         <div class="match-container">
-            <a class="card" href="https://www.google.com/maps/place/Seattle-Tacoma+International+Airport/@47.4483943,-122.3111876,17z/data=!3m1!4b1!4m6!3m5!1s0x5490435542eafefd:0x99d3d9c4c7dc37b7!8m2!3d47.4483943!4d-122.3086127!16zL20vMDFuNWRy?entry=ttu" target="_blank">                 
-                <img class="card-image" src="img/sexyplane2.png"/>
+            <a class="card" href="bard.html">                 
+                <img class="card-image" src="img/profile.webp"/>
                 <div class="card-info">
-                    <h2 id="name"></h2>
-                    <p></p>
-                    <P></P>
+                    <h2 id="name1"></h2>
+                    <p id="i1"></p>
+                    <p id="d1"></p>
+
     
                 </div>
             </a>
-            <a class="card" href="https://www.google.com/maps/place/Seattle-Tacoma+International+Airport/@47.4483943,-122.3111876,17z/data=!3m1!4b1!4m6!3m5!1s0x5490435542eafefd:0x99d3d9c4c7dc37b7!8m2!3d47.4483943!4d-122.3086127!16zL20vMDFuNWRy?entry=ttu" target="_blank">                 
-                <img class="card-image" src="img/sexyplane2.png"/>
+            <a class="card" href="bard.html">                 
+                <img class="card-image" src="img/profile.webp"/>
                 <div class="card-info">
-                    <h2></h2>
-                    <p></p>
-                    <P></P>
+                  <h2 id="name2"></h2>
+                  <p id="i2"></p>
+                  <p id="d2"></p>
+
 
                 </div>
         </a>
-            <a class="card" href="https://www.google.com/maps/place/Seattle-Tacoma+International+Airport/@47.4483943,-122.3111876,17z/data=!3m1!4b1!4m6!3m5!1s0x5490435542eafefd:0x99d3d9c4c7dc37b7!8m2!3d47.4483943!4d-122.3086127!16zL20vMDFuNWRy?entry=ttu" target="_blank">                 
-                <img class="card-image" src="img/sexyplane2.png"/>
+            <a class="card" href="bard.html">   
+                <img class="card-image" src="img/profile.webp"/>
                 <div class="card-info">
-                    <h2></h2>
-                    <p></p>
-                    <P></P>
+                  <h2 id="name3"></h2>
+                  <p id="i3"></p>
+                  <p id="d3"></p>
+
 
                 </div>
             </a>
@@ -63,20 +66,45 @@
   </div>
 
   <script>
-    const _flight = localStorage.getItem('flight-number');
-    const _interest = localStorage.getItem('interest');
-   
-    console.log(_flight);
-    console.log(_interest);
 
+  
     const Http = new XMLHttpRequest();
-    const url="https://flyngbackend-2ac42a8587ca.herokuapp.com/api/"+_flight;
+    const url='https://us-west1-festive-airway-393617.cloudfunctions.net/func2';
     Http.open("GET", url);
     Http.send();
+    Http.overrideMimeType("application/json");  
+
 
     Http.onreadystatechange = (e) => {
-        console.log(Http.responseText)
+        //set values
+        let data = JSON.parse(Http.responseText);
+        let n1 = parseInt(Math.random()*10);
+        let n2 = parseInt(Math.random()*10);
+        while(n2==n1){
+          n2 = parseInt(Math.random()*10);
+        }
+        let n3 = parseInt(Math.random()*10);
+        while(n3==n1 || n3 == n2){
+          n3 = parseInt(Math.random()*10);
+        }
+        
+
+        console.log(n1);
+        document.getElementById('name1').innerHTML = data[n1]['name'];
+        document.getElementById('name2').innerHTML = data[n2]['name'];
+        document.getElementById('name3').innerHTML = data[n3]['name'];
+
+        document.getElementById('i1').innerHTML = "Interest: " + data[n1]['interests'];
+        document.getElementById('i2').innerHTML = "Interest: " + data[n2]['interests'];
+        document.getElementById('i3').innerHTML = "Interest: " + data[n3]['interests'];
+
+        document.getElementById('d1').innerHTML = "Destination: " + data[n1]['destination'];
+        document.getElementById('d2').innerHTML = "Destination: " + data[n2]['destination'];
+        document.getElementById('d3').innerHTML = "Destination: " + data[n3]['destination'];
+
     }
+  
+
   </script>
   
   

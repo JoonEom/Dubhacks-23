@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <meta charset="utf-8">
+  <title>Flyng</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;700&display=swap" rel="stylesheet">
+  <link href="profileStyles.css" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+
+
+<body>
+  <nav id="navbar">
+    <a href="about.html"><img class="logo" src="img/sexyplane2.png"></a>
+
+
+    <ul>
+      <li><a href="signup.html">Sign Up</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <div class="match-container">
+        <div class="card">
+          <img width="200" src="img/profile.webp" class="card-image">
+            <div class="card-info">
+                <h2 id="name"></h2>
+                <p id="interest"></p>
+            </div>
+        </div>                
+            
+
+    </div>
+        
+  </div>
+
+
+<script>
+    const _firstName = localStorage.getItem('first-name');
+    const _lastName = localStorage.getItem('last-name');
+    const _interest = localStorage.getItem('interest');
+
+    document.getElementById('name').innerHTML = _firstName + " " + _lastName;
+    document.getElementById('interest').innerHTML = "Interest: " + _interest;
+
+
+
+</script>
+
+
+</body>
+
+
+</html>

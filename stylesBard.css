@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: 'Gabarito', sans-serif;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    
+}
+
+.logo {
+    height: 11vh;
+    width: auto;
+    padding-left: 5vw;
+    transition: 0.3s ease;
+}
+.logo:hover{
+    height: 12vh;
+}
+
+nav ul {
+    margin-right: 5vw;
+    margin-left: 10vw;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 20px;
+}
+
+nav ul li a {
+    font-size: 130%;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: 0.3s ease;
+    letter-spacing: .15em; 
+}
+
+nav ul li a:hover {
+    color: orange;
+    font-size: 150%;
+}
+
+.container {
+    background-image: url('img/background.jpeg');
+    background-size: cover;
+    height: 100vh;
+
+}
+.tagline-container{
+    display: flex;
+    justify-content: center;
+}
+.tagline {
+    margin-top: 170px;
+    margin-bottom: 20px;
+    font-size: 50px;
+    color: white; 
+    overflow: hidden;
+    border-right: 5px solid orange; 
+    white-space: nowrap; 
+    letter-spacing: .15em; 
+    animation: typing 2s steps(40, end), blink-caret .75s step-end infinite; /* Specifies the animation */
+}
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 60%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: orange;
+    }
+  
+  }
+  .text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    align-items: center;
+    line-height: 1.5;
+
+  }
+  
